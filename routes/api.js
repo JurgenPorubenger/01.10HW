@@ -11,14 +11,20 @@ router.get('/', function(req, res, next) {
 
 router.post('/', function(req, res, next) {
   const{ tickets } = req.body;
-  tickets.forEach((item,i,arr)=>{
-    const { fromName, toName, departAt, vehicle } = item;
-    const article = new ArticleModel({
-      tickets:arr,
-    });
-    ticketsArr=arr;
-    article.save();
+  const article = new ArticleModel({
+    tickets:tickets,
   });
+  ticketsArr=tickets;
+  article.save();
+
+  // tickets.forEach((item,i,arr)=>{
+  //   const { fromName, toName, departAt, vehicle } = item;
+  //   const article = new ArticleModel({
+  //     tickets:arr,
+  //   });
+  //   ticketsArr=arr;
+  //   article.save();
+  // });
   res.send('ok');
 
 });
