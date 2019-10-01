@@ -1,0 +1,15 @@
+extends layout
+
+block content
+  h1= title
+  .tickets_stylesheet
+    each ticket in ticketList
+      p=ticket.fromName
+      p=ticket.toName
+      p=ticket.departAt
+      p=ticket.vehicle
+      br
+      hr
+
+
+

@@ -6,7 +6,7 @@ let ticketsArr = [];
 /* GET users listing. */
 router.get('/', function(req, res, next) {
 
-  res.render('index', {ticketList: ticketsArr });
+  res.render('api', {ticketList: ticketsArr });
 });
 
 router.post('/', function(req, res, next) {
@@ -15,6 +15,7 @@ router.post('/', function(req, res, next) {
     tickets:tickets,
   });
   ticketsArr=tickets;
+  console.log(ticketsArr);
   article.save();
 
   // tickets.forEach((item,i,arr)=>{

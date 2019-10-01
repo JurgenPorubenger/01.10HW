@@ -1,14 +1,12 @@
 extends layout
 
 block content
-  h1= "Tickets"
-  .tickets_stylesheet
-    each ticket in ticketList
-      p=ticket.fromName
-      p=ticket.toName
-      p=ticket.departAt
-      p=ticket.vehicle
-      br
+  h1= title
+    .inp
+      input(type='text', name='WayTo')
+    .btn
+      button(type='submit', value='Submit')
+      script(src='./javascripts/index.js')
 
 
 
