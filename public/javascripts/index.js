@@ -8,16 +8,33 @@ document.querySelector(".btn").addEventListener("click", function (e) {
     let way = document.querySelector(".inp").value;
 
     // let tick = JSON.stringify({way: way});
-    console.log(way);
+    fetch('./users')
+        .then(
+            function(response) {
+                if (response.status !== 200) {
+                    console.log('Looks like there was a problem. Status Code: ' +
+                        response.status);
+                    return;
+                }
 
-    let xhr = new XMLHttpRequest();
-    // посылаем запрос на адрес "/users"
-    xhr.open("POST", "/users", true);
-    xhr.setRequestHeader("Content-Type", "application/json");
-    xhr.addEventListener("load", function () {
-        //получаем и парсим ответ сервера
-        let receivedUser = JSON.parse(xhr.response);
-        // console.log("receivedUser.userName, "-", receivedUser.userAge");   // смотрим ответ сервера
-    });
-    xhr.send();
+                // Examine the text in the response
+                response.json().then(function(data) {
+                    console.log(data);
+                });
+            }
+        )
+        .catch(function(err) {
+            console.log('Fetch Error :-S', err);
+        });
+
+    // let xhr = new XMLHttpRequest();
+    // // посылаем запрос на адрес "/users"
+    // xhr.open("POST", "/users", true);
+    // xhr.setRequestHeader("Content-Type", "application/json");
+    // xhr.addEventListener("load", function () {
+    //     //получаем и парсим ответ сервера
+    //     let receivedUser = JSON.parse(xhr.response);
+    //     // console.log("receivedUser.userName, "-", receivedUser.userAge");   // смотрим ответ сервера
+    // });
+    // xhr.send();
 });

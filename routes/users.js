@@ -4,9 +4,9 @@ const ArticleModel = require('../model/article');
 
 
 router.post('/', function(req, res, next) {
-  console.log(req.body)
+  console.log(req.body);
   res.json(req.body);
-})
+});
 /* GET users listing. */
 router.get('/', function(req, res, next) {
   ArticleModel.find({}).then(data=> {res.send(data)})

@@ -1,15 +1,14 @@
 extends layout
 
 block content
-  h1= title
+  h1 Trip to HELL!!!
   .tickets_stylesheet
     each ticket in ticketList
-      p=ticket.fromName
-      p=ticket.toName
-      p=ticket.departAt
-      p=ticket.vehicle
+      p= 'From:'+' '+ticket.fromName
+      p= 'To:'+' ' +ticket.toName
+      p= 'Date:'+' ' +ticket.departAt
+      p= 'Transport:'+' ' +ticket.vehicle
       br
-      hr
 
 
 

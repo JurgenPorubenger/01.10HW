@@ -1,15 +1,13 @@
 const mongoose = require('mongoose');
 const  Schema = mongoose.Schema;
 
-const ArticleSchema = new Schema({
-    tickets: [{
+const TripToHellSchema = new Schema({
         fromName: String,
         toName: String,
         departAt: String,
         vehicle: String
-    }],
 });
 
 
-const Model = mongoose.model('Article', ArticleSchema);
+const Model = mongoose.model('TripToHellSchema', TripToHellSchema);
 module.exports = Model;
