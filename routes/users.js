@@ -9,8 +9,9 @@ router.post('/', function(req, res, next) {
 });
 /* GET users listing. */
 router.get('/', function(req, res, next) {
-  ArticleModel.find({}).then(data=> {res.send(data)})
-      .catch(err=> console.log(err))
+  // ArticleModel.find({}).then(data=> {res.send(data)})
+  //     .catch(err=> console.log(err))
+  res.render('api');
 });
 
 module.exports = router;

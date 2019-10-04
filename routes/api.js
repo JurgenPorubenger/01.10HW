@@ -1,5 +1,6 @@
 const express = require('express');
 const router = express.Router();
+const mongoose = require('mongoose');
 const TripToHellModel = require('../model/article');
 let ticketsArr;
 
@@ -17,7 +18,13 @@ router.post('/', function(req, res, next) {
       departAt,
       vehicle
     });
-    article.save();
+    article.save()
+        .then(function(doc){
+      console.log("Сохранен объект", doc);
+    })
+        .catch(function (err){
+          console.log(err);
+        });
     ticketsArr=arr;
   });
   res.send('ok');

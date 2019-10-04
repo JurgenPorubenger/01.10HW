@@ -5,8 +5,8 @@ var cookieParser = require('cookie-parser');
 var logger = require('morgan');
 const mongoose = require('mongoose');
 
-mongoose.connect('mongodb+srv://jurgen:alpaka1985@cluster0-lglro.mongodb.net/test?retryWrites=true&w=majority', {
-  useNewUrlParser: true,
+mongoose.connect('mongodb+srv://jurgen:alpaka1985@cluster0-lglro.mongodb.net/admin?retryWrites=true&w=majority', {
+  useNewUrlParser: true ,
   useUnifiedTopology: true
 });
 
