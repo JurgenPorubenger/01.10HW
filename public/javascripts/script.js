@@ -4,15 +4,18 @@ console.log("Alive!");
 
 document.querySelector(".btn").addEventListener("click", function (e) {
     e.preventDefault();
-    // получаем данные формы
-    let way = document.getElementsByClassName("inp").value;
-    console.log(way);
-    fetch(' /users', {
+    console.log("Click");
+
+        // получаем данные формы
+    let way = document.querySelector('#inputFrom').value;
+    let direction = JSON.stringify({way});
+    console.log(direction);
+    fetch('/users', {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json;charset=utf-8'
         },
-        body: "ggaga",
+        body: JSON.stringify({way}),
     })
         .then((response)=> response.json())
         .then(result=> console.log(result))

@@ -9,9 +9,11 @@ router.post('/', function(req, res, next) {
 });
 /* GET users listing. */
 router.get('/', function(req, res, next) {
+  console.log('Get-200');
+
   // ArticleModel.find({}).then(data=> {res.send(data)})
   //     .catch(err=> console.log(err))
-  res.render('api');
+  res.send();
 });
 
 module.exports = router;
